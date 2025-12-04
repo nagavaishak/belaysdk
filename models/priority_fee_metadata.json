@@ -1,0 +1,20 @@
+{
+  "model_type": "RandomForestRegressor",
+  "n_estimators": 100,
+  "feature_columns": [
+    "instructionCount",
+    "accountCount",
+    "computeUnitsUsed",
+    "slotTime",
+    "program_jupiter",
+    "program_raydium"
+  ],
+  "train_samples": 247,
+  "test_samples": 62,
+  "mae": 2.371692252312041e-20,
+  "rmse": 2.371692252312041e-20,
+  "r2_score": -48.0,
+  "accuracy_percent": -4800.0,
+  "trained_on_transactions": 309,
+  "total_dataset": 400
+}

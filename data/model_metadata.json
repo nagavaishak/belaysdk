@@ -1,0 +1,18 @@
+{
+  "feature_columns": [
+    "instructionCount",
+    "accountCount",
+    "dataSize",
+    "priorityFee",
+    "networkCongestion",
+    "program_jupiter",
+    "program_raydium"
+  ],
+  "model_type": "RandomForestRegressor",
+  "n_estimators": 100,
+  "train_samples": 14,
+  "test_samples": 4,
+  "mae": 6374.969800595236,
+  "r2_score": 0.447157888473964,
+  "accuracy_percent": 44.7157888473964
+}
