@@ -367,7 +367,7 @@ interface BelayConfig {
 
 **Midwest Blockchain Conference 2025**
 - **Tracks:** Solana + Polymarket
-- **Demo:** [Live Demo](https://belay-sdk.netlify.app)
+- **Demo:** [Live Demo](https://belaysdk.netlify.app)
 - **GitHub:** [github.com/nagavaishak/belaysdk](https://github.com/nagavaishak/belaysdk)
 - **Video Pitch:** https://youtu.be/frBgub_C2L0
 ---
