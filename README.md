@@ -369,7 +369,7 @@ interface BelayConfig {
 - **Tracks:** Solana + Polymarket
 - **Demo:** [Live Demo](https://belay-sdk.netlify.app)
 - **GitHub:** [github.com/nagavaishak/belaysdk](https://github.com/nagavaishak/belaysdk)
-
+- **Video Pitch:** https://youtu.be/frBgub_C2L0
 ---
 
 ## 📝 License
