@@ -28,7 +28,7 @@ BELAY provides **6 core modules** that work together:
 | **Market Anxiety Index** | Monitors Polymarket + on-chain data for incoming volatility (0-100 score) | `marketAnxiety.ts` |
 | **Slippage Optimizer** | Recommends slippage BEFORE chaos hits (predictive, not reactive) | `slippageOptimizer.ts` |
 | **Dual-Path Router** | Races SWQoS vs Jito Bundle simultaneously | `dualPathRouter.ts` |
-| **Smart Retry Engine** | Fresh blockhash on every attempt, fast backoff (100-800ms) | `retryEngine.ts` |
+| **Smart Retry Engine** | Fresh blockhash on every attempt, fast backoff (400ms-2s) | `retryEngine.ts` |
 | **Slot-Aware RPC Router** | Bans stale RPC nodes, picks freshest (Helius/Triton) | `rpcRouter.ts` |
 | **ML Predictor** | Predicts optimal compute units for transaction structure | `mlPredictor.ts` |
 
