@@ -280,6 +280,49 @@ export default function CommandCenter() {
         console.log(`[BELAY] Calculated volatility: ${volatilityScore} (vol=${volumeScore.toFixed(1)}, unc=${uncertaintyPoints.toFixed(1)}, act=${activityScore})`);
       }
       
+      // ============ ON-CHAIN CONGESTION CHECK ============
+// Fetch real Solana network stats (backup oracle)
+let onChainCongestion = 0;
+try {
+  const rpcResponse = await fetch('https://api.mainnet-beta.solana.com', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      jsonrpc: '2.0',
+      id: 1,
+      method: 'getRecentPerformanceSamples',
+      params: [5]
+    })
+  });
+  
+  const rpcData = await rpcResponse.json();
+  
+  if (rpcData.result && rpcData.result.length > 0) {
+    // Calculate average TPS and slot time
+    const samples = rpcData.result;
+    const avgTps = samples.reduce((sum: number, s: any) => sum + (s.numTransactions / s.samplePeriodSecs), 0) / samples.length;
+    const avgSlotTime = samples.reduce((sum: number, s: any) => sum + (s.samplePeriodSecs * 1000 / s.numSlots), 0) / samples.length;
+    
+    // Normal: ~400ms slot time, ~3000 TPS
+    // Congested: >500ms slot time, <2000 TPS
+    const slotCongestion = Math.min(((avgSlotTime - 400) / 200) * 50, 50); // 0-50 points
+    const tpsCongestion = Math.min(((3000 - avgTps) / 2000) * 50, 50); // 0-50 points
+    
+    onChainCongestion = Math.max(0, Math.round(slotCongestion + tpsCongestion));
+    
+    console.log(`[BELAY] On-chain: TPS=${avgTps.toFixed(0)}, SlotTime=${avgSlotTime.toFixed(0)}ms, Congestion=${onChainCongestion}`);
+  }
+} catch (e) {
+  console.log('[BELAY] On-chain check failed, using Polymarket only');
+}
+
+// Combine both oracles (Polymarket 60%, On-chain 40%)
+const combinedScore = Math.round((volatilityScore * 0.6) + (onChainCongestion * 0.4));
+volatilityScore = Math.max(15, Math.min(combinedScore, 95));
+
+console.log(`[BELAY] Combined anxiety: ${volatilityScore} (Polymarket=${Math.round(volatilityScore * 0.6)}, OnChain=${onChainCongestion})`);
+// ============ END ON-CHAIN CHECK ============
+
       // Simulate RPC selection (in real SDK, this comes from rpcRouter.ts)
       setSelectedRPC(Math.random() > 0.3 ? 'Helius' : 'Triton');
       

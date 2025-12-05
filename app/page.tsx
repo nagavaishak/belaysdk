@@ -95,7 +95,7 @@ export default function Home() {
               <a href="#demo" className="px-4 py-2 rounded-lg text-sm font-medium text-white/60 hover:text-white hover:bg-white/5 transition-all">
                 Demo
               </a>
-              <a href="https://github.com/nagavaishak/belay" target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-lg text-sm font-medium text-white/60 hover:text-white hover:bg-white/5 transition-all">
+              <a href="https://github.com/nagavaishak/belaysdk" target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-lg text-sm font-medium text-white/60 hover:text-white hover:bg-white/5 transition-all">
                 GitHub
               </a>
             </div>
@@ -171,7 +171,7 @@ export default function Home() {
                 <Button 
                   size="lg"
                   className="bg-white text-black hover:bg-white/90 font-semibold px-8 shadow-2xl shadow-purple-500/20"
-                  onClick={() => window.open('https://github.com/nagavaishak/belay', '_blank')}
+                  onClick={() => window.open('https://github.com/nagavaishak/belaysdk', '_blank')}
                 >
                   View on GitHub
                 </Button>
@@ -223,7 +223,7 @@ export default function Home() {
                         Try Demo
                       </Button>
                       <a 
-                        href="https://github.com/nagavaishak/belay"
+                        href="https://github.com/nagavaishak/belaysdk"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-white/60 hover:text-white text-sm flex items-center justify-center gap-2"
@@ -703,7 +703,7 @@ export default function Home() {
             </div>
 
             <div className="flex items-center gap-6 text-sm">
-              <a href="https://github.com/nagavaishak/belay" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors">GitHub</a>
+              <a href="https://github.com/nagavaishak/belaysdk" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors">GitHub</a>
               <span className="text-white/20">•</span>
               <span className="text-white/50">MBC 2025 Hackathon</span>
               <span className="text-white/20">•</span>

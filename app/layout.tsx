@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "BELAY - ML-Powered Transaction Optimization for Solana",
+  title: "BELAY",
   description: "Never lose money on failed Solana transactions. BELAY uses machine learning and real-time network monitoring to optimize parameters and automatically retry failures. 99% target success rate.",
   keywords: ["Solana", "blockchain", "transaction optimization", "ML", "crypto", "DeFi", "Web3"],
   authors: [{ name: "BELAY Team" }],
